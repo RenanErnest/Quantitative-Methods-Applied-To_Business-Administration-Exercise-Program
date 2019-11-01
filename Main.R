@@ -1,0 +1,5 @@
+mydata <- read.csv("IBM.csv")
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+View(mydata)

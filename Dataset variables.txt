@@ -1,0 +1,42 @@
+quantitativas:
+	Discretas:
+		Numeração do funcionário
+		Quantidade de horas de trabalho
+
+	Contínuas:
+		Idade
+		Distancia de casa
+		Salário
+		Porcentagem de aumento de salário
+		Número de empresas trabalhadas
+		Total de anos trabalhados
+		Quantidade de treinamentos no último ano
+		Anos na compania
+		Anos no cargo atual
+		Anos desde a última promoção
+		Anos com o atual gerente
+
+qualitativas:
+	Nominais:
+		Evasão
+		Departamento
+		Area de estudo
+		Gênero
+		Cargo
+		Estado cívil
+		Hora extra
+		Plano de opção de compras de ações(benefício em ações da empresa)
+
+	Ordinais:
+		Educação
+		Viagem a negócios
+		Satisfação com o Ambiente de Trabalho
+		Envolvimento com o trabalho
+		Level de trabalho (Importância da pessoa naquele cargo)
+		Satisfação com o trabalho
+		Indicador de performance
+		Satisfação interpessoal
+		Work-life balance
+
+
+
