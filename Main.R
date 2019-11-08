@@ -7,8 +7,6 @@ install.packages('rms')
 require(rms)
 View(mydataT)
 
-
-# Renan e Kendy
 # ------------------------ Analise Exploratoria de dados ------------------------
 str(mydataT)
 
@@ -111,7 +109,14 @@ library(caTools)
 library(e1071)
 library(glmnet)
 
-mydatanew = mydataT[,c(3,6,18,21,23)] # escolhendo variaveis correlacionadas com a evasao e um pouco indepentendes entre si
+#Verificando variaveis
+View(mydataT)
+cdplot(Evasao~AnosCompanhia, data=mydataT)
+cdplot(Evasao~Idade, data=mydataT)
+cdplot(Evasao~SalarioMensal, data=mydataT)
+cdplot(Evasao~NivelTrabalho, data=mydataT)
+
+mydatanew = mydataT[,c(2,3,6,18,21,23)] # escolhendo variaveis correlacionadas com a evasao e um pouco indepentendes entre si
 str(mydatanew)
 mydatanew = mydataT[,-c(6,9,22)] # Todas exceto distancia de casa, as descartadas citadas no comeco
 str(mydatanew)
@@ -124,19 +129,20 @@ View(split)
 
 # Utilizando a Regressao Logistica
 model_glm <- glm(Evasao ~ ., data = train, family='binomial') 
+cdplot(Evasao~ViagemNegocios, data=mydataT)
 
 # Predizendo em casos de teste
 predicted_glm <- predict(model_glm, test, type='response')
 predicted_glm <- ifelse(predicted_glm > 0.5,1,0)
+str(mydataT)
 summary(model_glm)
+print(model_glm)
 # Matriz de Confusao
-table(test$Evasao, predicted_glm)
+t = table(test$Evasao, predicted_glm)
 
 # Porcentagem/Chance de Acerto
-print((237+21)/294)
+print( (t[1,"0"] + t[2,"1"]) / count(test)) # Acertos da matriz de confusao dividido pelo numero de elementos
 # -------------------------------------------------------------------------------
-
-#Vinicius:
 
 cores <- c(2)
 
