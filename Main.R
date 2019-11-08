@@ -45,44 +45,92 @@ l <- l + geom_histogram(stat="count")
 print(l)
 
 ### Hora Extra vs Evasao
-l <- ggplot(mydataT, aes(HoraExtra,fill = Evasao))
-l <- l + geom_histogram(stat="count") + ylab("Quantidade") + theme(text = element_text(size=20))
+#Quantidade
+l <- ggplot(mydataT, aes(HoraExtra,fill = Evasao)) +
+  geom_histogram(stat="count") + ylab("Quantidade") + 
+  theme(text = element_text(size=20))
+#Proporcao
+l <- ggplot(mydataT, aes(HoraExtra, fill = Evasao)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) + ylab("Proporção") +
+  theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$HoraExtra,mean)
 
 ### Estado Civil vs Evasao
-l <- ggplot(mydataT, aes(EstadoCivil,fill = Evasao))
-l <- l + geom_histogram(stat="count") + ylab("Quantidade") + theme(text = element_text(size=20))
+#Quantidade
+l <- ggplot(mydataT, aes(EstadoCivil,fill = Evasao)) +
+  geom_histogram(stat="count") + ylab("Quantidade") + 
+  theme(text = element_text(size=20))
+#Proporcao
+l <- ggplot(mydataT, aes(EstadoCivil, fill = Evasao)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) + ylab("Proporção") +
+  theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$EstadoCivil,mean)
 
 ### Cargo vs Evasao
-l <- ggplot(mydataT, aes(Cargo,fill = Evasao))
-l <- l + geom_histogram(stat="count") + ylab("Quantidade") + theme(text = element_text(size=20), axis.text.x = element_text(angle = 45, hjust = 1))
+#Quantidade
+l <- ggplot(mydataT, aes(Cargo,fill = Evasao)) +
+  geom_histogram(stat="count") + ylab("Quantidade") + 
+  theme(text = element_text(size=20), axis.text.x = element_text(angle = 45, hjust = 1))
+#Proporcao
+l <- ggplot(mydataT, aes(Cargo, fill = Evasao)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) + ylab("Proporção") +
+  theme(text = element_text(size=20), axis.text.x = element_text(angle = 45, hjust = 1))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$HoraExtra,mean)
 
 ### Genero vs Evasao
-l <- ggplot(mydataT, aes(Genero,fill = Evasao))
-l <- l + geom_histogram(stat="count") + ylab("Quantidade") + theme(text = element_text(size=20))
+#Quantidade
+l <- ggplot(mydataT, aes(Genero,fill = Evasao)) +
+  geom_histogram(stat="count") + ylab("Quantidade") + 
+  theme(text = element_text(size=20))
+#Proporcao
+l <- ggplot(mydataT, aes(Genero, fill = Evasao)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) + ylab("Proporção") +
+  theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$Genero,mean)
 
 ### Area de Estudo vs Evasao
-l <- ggplot(mydataT, aes(AreaEstudo,fill = Evasao))
-l <- l + geom_histogram(stat="count") + ylab("Quantidade") + theme(text = element_text(size=20))
+#Quantidade
+l <- ggplot(mydataT, aes(AreaEstudo,fill = Evasao)) +
+  geom_histogram(stat="count") + ylab("Quantidade") + 
+  theme(text = element_text(size=20))
+#Proporcao
+l <- ggplot(mydataT, aes(AreaEstudo, fill = Evasao)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) + ylab("Proporção") +
+  theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$AreaEstudo,mean)
 
-### Area de Estudo vs Evasao
-l <- ggplot(mydataT, aes(Departamento,fill = Evasao))
-l <- l + geom_histogram(stat="count") + ylab("Quantidade") + theme(text = element_text(size=20))
+### Departamento vs Evasao
+l <- ggplot(mydataT, aes(Departamento,fill = Evasao)) +
+  geom_histogram(stat="count") + ylab("Quantidade") + 
+  theme(text = element_text(size=20))
+#Proporcao
+l <- ggplot(mydataT, aes(Departamento, fill = Evasao)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) + ylab("Proporção") +
+  theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$Departamento,mean)
 
 ### Viagem a Negocios vs Evasao
-l <- ggplot(mydataT, aes(ViagemNegocios,fill = Evasao))
-l <- l + geom_histogram(stat="count") + ylab("Quantidade") + theme(text = element_text(size=20))
+#Quantidade
+l <- ggplot(mydataT, aes(ViagemNegocios,fill = Evasao)) +
+  geom_histogram(stat="count") + ylab("Quantidade") + 
+  theme(text = element_text(size=20))
+#Proporcao
+l <- ggplot(mydataT, aes(ViagemNegocios, fill = Evasao)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) + ylab("Proporção") +
+  theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$ViagemNegocios,mean)
 
