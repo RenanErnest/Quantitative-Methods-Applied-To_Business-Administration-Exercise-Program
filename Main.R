@@ -56,6 +56,9 @@ l <- ggplot(mydataT, aes(HoraExtra, fill = Evasao)) +
   theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$HoraExtra,mean)
+#Teste estatistico
+tbl = table(mydataT$HoraExtra, mydataT$Evasao)
+chisq.test(tbl)
 
 ### Estado Civil vs Evasao
 #Quantidade
@@ -69,6 +72,9 @@ l <- ggplot(mydataT, aes(EstadoCivil, fill = Evasao)) +
   theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$EstadoCivil,mean)
+#Teste estatistico
+tbl = table(mydataT$EstadoCivil, mydataT$Evasao)
+chisq.test(tbl)
 
 ### Cargo vs Evasao
 #Quantidade
@@ -82,6 +88,9 @@ l <- ggplot(mydataT, aes(Cargo, fill = Evasao)) +
   theme(text = element_text(size=20), axis.text.x = element_text(angle = 45, hjust = 1))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$HoraExtra,mean)
+#Teste estatistico
+tbl = table(mydataT$Cargo, mydataT$Evasao)
+chisq.test(tbl)
 
 ### Genero vs Evasao
 #Quantidade
@@ -95,6 +104,9 @@ l <- ggplot(mydataT, aes(Genero, fill = Evasao)) +
   theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$Genero,mean)
+#Teste estatistico
+tbl = table(mydataT$Genero, mydataT$Evasao)
+chisq.test(tbl)
 
 ### Area de Estudo vs Evasao
 #Quantidade
@@ -108,6 +120,9 @@ l <- ggplot(mydataT, aes(AreaEstudo, fill = Evasao)) +
   theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$AreaEstudo,mean)
+#Teste estatistico
+tbl = table(mydataT$AreaEstudo, mydataT$Evasao)
+chisq.test(tbl)
 
 ### Departamento vs Evasao
 l <- ggplot(mydataT, aes(Departamento,fill = Evasao)) +
@@ -120,6 +135,9 @@ l <- ggplot(mydataT, aes(Departamento, fill = Evasao)) +
   theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$Departamento,mean)
+#Teste estatistico
+tbl = table(mydataT$Departamento, mydataT$Evasao)
+chisq.test(tbl)
 
 ### Viagem a Negocios vs Evasao
 #Quantidade
@@ -133,6 +151,9 @@ l <- ggplot(mydataT, aes(ViagemNegocios, fill = Evasao)) +
   theme(text = element_text(size=20))
 print(l)
 tapply(as.numeric(mydataT$Evasao) - 1 ,mydataT$ViagemNegocios,mean)
+#Teste estatistico
+tbl = table(mydataT$ViagemNegocios, mydataT$Evasao)
+chisq.test(tbl)
 
 ### x=HoraExtra, y= Idade, z = EstadoCivil , t = Evasao
 ggplot(mydataT, aes(HoraExtra, Idade)) +  
