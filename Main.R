@@ -266,3 +266,9 @@ model
 #resumao escrito http://www.estatisticacomr.uff.br/?p=598
 
 glm(formula=mydata$Attrition~mydata$DistanceFromHome+mydata$Age, family=binomial,data=mydata,control=list(maxit=50))
+
+
+#regressão logística glm com todas as variáveis, usada para decidir quais variáveis são as mais relevantes 
+#(veio antes da ideia de fazer testes de hipótese em cada variável)
+modelo1 = glm(formula = mydata$Attrition~mydata$Age+mydata$BusinessTravel+mydata$DailyRate+mydata$Department + mydata$DistanceFromHome+ mydata$Education+ mydata$EducationField+ mydata$EmployeeCount+ mydata$EmployeeNumber+ mydata$EnvironmentSatisfaction+ mydata$Gender+ mydata$HourlyRate+ mydata$JobInvolvement+ mydata$JobLevel+ mydata$JobSatisfaction+ mydata$MaritalStatus+ mydata$MonthlyIncome+ mydata$MonthlyRate+ mydata$NumCompaniesWorked+ mydata$OverTime+ mydata$PercentSalaryHike+ mydata$PerformanceRating+ mydata$RelationshipSatisfaction+ mydata$StandardHours+ mydata$StockOptionLevel+ mydata$TotalWorkingYears+ mydata$TrainingTimesLastYear+ mydata$WorkLifeBalance+ mydata$YearsAtCompany+ mydata$YearsInCurrentRole+ mydata$YearsSinceLastPromotion+ mydata$YearsWithCurrManager, family=binomial(link = logit ),data=mydata,control=list(maxit=50))
+summary(modelo1)
